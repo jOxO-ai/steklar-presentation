@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steklar.si | Steklarske storitve Ljubljana</title>
+  <meta name="description" content="Izdelava in montaža steklenih ograj, tuš kabin, ogledal po meri, stopniščnih ograj in steklenih sten. Kakovostno steklarstvo v Ljubljani.">
+  
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #333;
+      --gray: #555;
+      --light-gray: #e0e0e0;
+      --accent: #444;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero */
+    header {
+      height: 90vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    
+    .hero-content p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: white;
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      background: var(--light-gray);
+      transform: translateY(-2px);
+    }
+    
+    /* Sekcije */
+    section {
+      padding: 100px 0;
+    }
+    
+    h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 300;
+      margin-bottom: 60px;
+      color: var(--gray);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    
+    .service {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .service h3 {
+      margin: 20px 0 12px;
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+    
+    /* Slider / Galerija */
+    .gallery {
+      overflow: hidden;
+    }
+    
+    .slider {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: 100%;
+    }
+    
+    .slide {
+      min-width: 100%;
+      aspect-ratio: 4 / 3;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .slide::after {
+      content: attr(data-caption);
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.65);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 1.1rem;
+    }
+    
+    .slider-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .slider-btn {
+      background: var(--gray);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 0 12px;
+      cursor: pointer;
+      font-size: 1.8rem;
+      transition: background 0.3s;
+    }
+    
+    .slider-btn:hover {
+      background: var(--accent);
+    }
+    
+    /* Kontakt */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    input, textarea {
+      padding: 14px;
+      border: 1px solid var(--light-gray);
+      border-radius: 4px;
+      font-size: 1rem;
+      background: white;
+    }
+    
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .map {
+      height: 400px;
+      background: #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    footer {
+      background: var(--gray);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.95rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.8rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="container hero-content">
+      <h1>Steklar.si</h1>
+      <p>Kakovostna izdelava in montaža steklenih ograj, tuš kabin, ogledal po meri ter stopniščnih in steklenih rešitev</p>
+      <a href="#kontakt" class="btn">Hitro povpraševanje</a>
+    </div>
+  </header>
+
+  <!-- Storitve -->
+  <section id="storitve">
+    <div class="container">
+      <h2>Naše storitve</h2>
+      <div class="services-grid">
+        <div class="service">
+          <h3>Steklene ograje</h3>
+          <p>Moderne, varne in elegantne ograje za notranje in zunanje prostore.</p>
+        </div>
+        <div class="service">
+          <h3>Tuš kabine</h3>
+          <p>Frameless in polno steklene tuš kabine po meri – minimalističen videz.</p>
+        </div>
+        <div class="service">
+          <h3>Ogledala po meri</h3>
+          <p>LED, brušena, barvna – popolnoma prilagojena vašemu prostoru.</p>
+        </div>
+        <div class="service">
+          <h3>Stopniščne ograje</h3>
+          <p>Steklo + inox ali les – sodobne in funkcionalne rešitve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerija / Slider referenc -->
+  <section id="reference" class="gallery">
+    <div class="container">
+      <h2>Reference</h2>
+      <div class="slider" id="slider">
+        <div class="slide" style="background-image: url('https://dgm-dgm-cms-service-test.s3.amazonaws.com/glass_railings_top_banner1_ebf0419015_905cbd40ff.webp');" data-caption="Steklena ograja – moderna hiša"></div>
+        <div class="slide" style="background-image: url('https://ventanaman.com/wp-content/uploads/Frameless-Shower-5.jpg');" data-caption="Frameless tuš kabina"></div>
+        <div class="slide" style="background-image: url('https://southernstaircase.com/wp-content/uploads/2025/01/ODonnell-River-Club-203-Glass-Railing-Open-Rise.jpg');" data-caption="Stopniščna steklena ograja"></div>
+        <div class="slide" style="background-image: url('https://www.schickershowerdoors.com/wp-content/uploads/2023/07/minimalist-bathroom-shower-doors-01.jpg');" data-caption="Elegantna tuš kabina v sivih tonih"></div>
+      </div>
+      
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="prevSlide()">←</button>
+        <button class="slider-btn" onclick="nextSlide()">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="container">
+      <h2>Kontaktirajte nas</h2>
+      <div class="contact-grid">
+        <form action="https://formspree.io/f/xvojqlez" method="POST"> <!-- ← Zamenjaj z lastnim Formspree / Getform linkom -->
+          <input type="text" name="ime" placeholder="Ime in priimek" required>
+          <input type="tel" name="telefon" placeholder="Telefon" required>
+          <input type="email" name="email" placeholder="E-pošta" required>
+          <textarea name="sporočilo" placeholder="Kaj potrebujete? (npr. ograja, tuš kabina, ogledalo...)" required></textarea>
+          <button type="submit" class="submit-btn">Pošlji povpraševanje</button>
+        </form>
+        
+        <div>
+          <div class="map">
+            <!-- Zamenjaj z embed kodo iz Google Maps (poišči "embed map" za Ljubljano) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11100.00000000000!2d14.505751!3d46.056946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ac9e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sLjubljana!5e0!3m2!1ssl!2ssi!4v1690000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <p style="margin-top:20px; text-align:center;">Ljubljana in okolico<br>051 303 708 | info@steklar.si</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Steklar.si | Vse pravice pridržane</p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const slider = document.getElementById('slider');
+
+    function showSlide(index) {
+      if (index >= totalSlides) currentSlide = 0;
+      if (index < 0) currentSlide = totalSlides - 1;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() { currentSlide++; showSlide(currentSlide); }
+    function prevSlide() { currentSlide--; showSlide(currentSlide); }
+
+    // Avtomatski slider (opcijsko – odstrani če ne želiš)
+    // setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>
